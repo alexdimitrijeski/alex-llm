@@ -1,0 +1,194 @@
+{
+  "info": {
+    "name": "alex-llm API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Models",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models"]
+        }
+      }
+    },
+    {
+      "name": "List Training Data Names",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/training-data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "training-data"]
+        }
+      }
+    },
+    {
+      "name": "Get Training Data by Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/training-data/{{name}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "training-data", "{{name}}"]
+        }
+      }
+    },
+    {
+      "name": "Train Model",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"corpus\": \"the cat sat on the mat\",\n  \"windowSize\": 3,\n  \"ngramN\": 3\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/models/ngram/train",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "ngram", "train"]
+        }
+      }
+    },
+    {
+      "name": "Generate Text",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"seed\": \"the cat\",\n  \"length\": 10\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/models/ngram/generate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "ngram", "generate"]
+        }
+      }
+    },
+    {
+      "name": "View Unigram Model Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/unigram/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "unigram", "data"]
+        }
+      }
+    },
+    {
+      "name": "View Bigram Model Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/bigram/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "bigram", "data"]
+        }
+      }
+    },
+    {
+      "name": "View NGram Model Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/ngram/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "ngram", "data"]
+        }
+      }
+    },
+    {
+      "name": "View FFNN Model Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/ffnn/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "ffnn", "data"]
+        }
+      }
+    },
+    {
+      "name": "View RNN Model Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/rnn/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "rnn", "data"]
+        }
+      }
+    },
+    {
+      "name": "View Transformer Model Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/transformer/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "transformer", "data"]
+        }
+      }
+    },
+    {
+      "name": "View AlexLanguageModel Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/models/alex/data",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "models", "alex", "data"]
+        }
+      }
+    }
+  ]
+}
