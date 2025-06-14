@@ -1,6 +1,5 @@
-package com.dimitrijeski.alex_llm;
+package com.dimitrijeski.alex_llm.model;
 
-import com.dimitrijeski.alex_llm.model.UnigramModel;
 import org.junit.jupiter.api.Test;
 import java.util.*;
 

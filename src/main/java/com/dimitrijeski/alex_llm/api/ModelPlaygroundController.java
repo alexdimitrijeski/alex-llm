@@ -26,7 +26,7 @@ public class ModelPlaygroundController {
     public static final String ERROR_READING_FIELDS = "Error reading fields: ";
     private final JdbcTemplate jdbcTemplate;
 
-    private final Map<String, LanguageModel> models = new ConcurrentHashMap<>();
+    final Map<String, LanguageModel> models = new ConcurrentHashMap<>();
 
     @GetMapping
     public List<String> listModels() {

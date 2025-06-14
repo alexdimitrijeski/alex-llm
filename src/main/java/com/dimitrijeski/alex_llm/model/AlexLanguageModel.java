@@ -1,6 +1,7 @@
 package com.dimitrijeski.alex_llm.model;
 
 import com.dimitrijeski.alex_llm.network.CustomMultiLayerNetwork;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
@@ -41,7 +42,9 @@ public class AlexLanguageModel implements LanguageModel {
 
     // Size of the context window (number of previous words used for prediction)
     private final int windowSize;
+    // Add this method to expose vocabulary size
     // Number of unique words in the vocabulary
+    @Getter
     private final int vocabSize;
     // Maps each word to a unique integer index
     private final ConcurrentHashMap<String, Integer> wordToIdx = new ConcurrentHashMap<>();
@@ -271,4 +274,5 @@ public class AlexLanguageModel implements LanguageModel {
         }
         return probs.length - 1; // fallback
     }
+
 }

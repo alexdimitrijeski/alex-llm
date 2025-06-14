@@ -47,7 +47,7 @@ public class DataPreLoader implements CommandLineRunner {
     }
 
     // Loads the entire training_data.txt as a single corpus string
-    private String loadTrainingCorpus() throws IOException {
+    String loadTrainingCorpus() throws IOException {
         Resource resource = resourceLoader.getResource("classpath:training_data.txt");
         if (resource.exists()) {
             List<String> lines = Files.readAllLines(resource.getFile().toPath());
@@ -63,7 +63,7 @@ public class DataPreLoader implements CommandLineRunner {
         }
     }
 
-    private void createTables() {
+    void createTables() {
         jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS training_data (" +
                 "id IDENTITY PRIMARY KEY, " +
                 "name VARCHAR(255), " +

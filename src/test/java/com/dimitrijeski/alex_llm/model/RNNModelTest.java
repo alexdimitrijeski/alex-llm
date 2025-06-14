@@ -1,6 +1,5 @@
-package com.dimitrijeski.alex_llm;
+package com.dimitrijeski.alex_llm.model;
 
-import com.dimitrijeski.alex_llm.model.RNNModel;
 import org.junit.jupiter.api.Test;
 import java.util.*;
 
